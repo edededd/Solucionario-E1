@@ -1,0 +1,124 @@
+\documentclass[a4 paper]{article}
+% Set target color model to RGB
+\usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{setspace}
+\usepackage[rgb]{xcolor}
+\usepackage{verbatim}
+\usepackage{subcaption}
+\usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb,tkz-linknodes}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true, urlcolor=blue,  linkcolor=blue, citecolor=blue]{hyperref}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{rotating}
+%\usetikzlibrary{through,backgrounds}
+\hypersetup{%
+pdfauthor={Ashudeep Singh},%
+pdftitle={Homework},%
+pdfkeywords={Tikz,latex,bootstrap,uncertaintes},%
+pdfcreator={PDFLaTeX},%
+pdfproducer={PDFLaTeX},%
+}
+%\usetikzlibrary{shadows}
+% \usepackage[francais]{babel}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\input{macro.tex}
+
+
+\begin{document}
+
+%Encabezado
+\homework{Solucionario E1}{Due: 14/05/21}{Profesor: Jorge Tipe}{}{2021-1}{01}
+
+%Principios de conteo
+\problem{1}{1}
+\\
+Solución:
+\\\\
+a) No es un CPO debido a que no cumple con la propiedad de transitividad, puesto que si tomamos los pares $(1,3)$ y $(3,4)$, entonces por la propiedad de transitividad debería de estar el par $(1,4)$, lo cual no es cierto.
+\\\\
+b) Si justamente agregamos el par $(1,4)$ ya se cumpliría la propiedad de transitividad. La propiedad de antisimetría se cumple para cada par(se puede verificar fácilmente) y asimismo se cumple la reflexividad. \\\\
+c) \\
+ \begin{tikzpicture}
+      %-- nodos
+      \node (1) [draw,circle] at (0,0) {1};
+      \node (2) [draw,circle] at (-1,1.5) {2};
+      \node (3) [draw,circle] at (1,1.5) {3};
+      \node (4) [draw,circle] at (0,3) {4};
+
+      \draw[loop below, ->, thick] (1) to (1);
+      \draw[loop left, ->, thick] (2) to (2);
+      \draw[loop right, ->, thick] (3) to (3);
+      \draw[loop above, ->, thick] (4) to (4);
+
+      \draw[->, thick] (2) to (4);
+      \draw[->, thick] (1) to (3);
+      \draw[->, thick] (1) to (4);
+      \draw[->, thick] (3) to (4);
+      \draw[->, thick] (2) to (3);
+
+      \end{tikzpicture}
+
+
+
+\problem{2}{2}
+\\
+Solución:
+\\\\
+a) Elementos maximales: $d,k$ \\
+b) Elementos minimales: $a$ \\ 
+c) Elemento mínimo: $a$, no existe elemento máximo. \\
+d) Cotas Superiores de ${b,g,e}$: $e,d$ \\
+e) Mínima cota superior de ${b,g,e}$: $e$ \\
+f) Cotas inferiores de ${d,h,k}$: $g,a$ \\
+g) Máxima cota inferior de ${d,h,k}$: $g$ \\
+h) No es una retícula debido a que no existe $d v k$ \\
+\newpage
+\problem{3}{2}
+\\
+Solucion:
+\\\\
+a) Sí, el elemento máximo es $j$ y el elemento mínimo es $a$ \\
+b) g$\wedge$j=g \\
+c) (evf)$\wedge$g = h$\wedge$g = c \\
+d) El único complemento de $e$ es $d$ \\
+e) No es complementaria ya que $f$ no tiene complemento \\
+f) Es una retícula distributiva ya que no contiene ninguna \\ subreticula isomorfa a $M_{3}$ o $N_{5}$ \\
+g) No es una álgebra booleana ya que la cantidad de elementos es 10 y no es una potencia de 2 \\
+h) Una subreticula posible es la conformada por los elementos $b,e,h,j$ \\
+i) No, ya que fvd=i, el cual no pertenece al conjunto de puntos dado. \\
+
+
+\problem{4}{5}
+\\
+Solución:
+\\\\
+De la ecuación $a+b=b$, le sacamos el complemento a ambas partes, del cual se obtiene que $(a+b)'= b'$.\\
+Es decir: $a'.b'=b'$.
+Luego, multiplicamos por $a$ en ambos lados y se obtiene que: $a.(a'.b')=a.b'$, lo cual equivale a: $(a.a').b = a.b'$. Como $a.a'=0$, entonces: $0=a.b'$, que es lo que queríamos demostrar.
+
+
+\problem{5}{2}
+Solución:
+\\\\
+a)
+$f(w,x,y,z) = wx(wx+yz) + xy'z + yw$ \\
+$f(w,x,y,z) = wx + wxyz + xy'z + yw$ \\
+$f(w,x,y,z) = wx(y+y')(z+z') + wxyz + (w+w')xy'z + w(x+x')y(z+z')$ \\
+$f(w,x,y,z) = (wxy+wxy')(z+z') + wxyz + (wxy'z + w'xy'z) +  (wx+wx')y(z+z')$ \\
+$f(w,x,y,z) = (wxyz + wxyz'+ wxy'z + wxy'z') + wxyz + (wxy'z + w'xy'z) +  (wxyz + wxyz' + wx'yz + wx'yz')$ \\
+$f(w,x,y,z) = wxyz + wxyz'+ wxy'z + wxy'z' + w'xy'z + wx'yz + wx'yz'$
+\\\\
+b) 
+$f(w,x,y,z) = \[
+\sum_{}^{}(5,10,11,12,13,14,15) 
+\]$
+\\
+c) f(w,x,y,z) = \[\prod_{}^{}(0,1,2,3,4,6,7,8,9) \]$
+
+
+
+
+
+\end{document}
